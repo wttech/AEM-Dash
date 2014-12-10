@@ -4,7 +4,7 @@
 
 	<groupId>com.cognifide.aem</groupId>
 	<artifactId>dash</artifactId>
-	<version>1.2.0-SNAPSHOT</version>
+	<version>1.2.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>AEM Dash</name>
 	<description>Search everywhere engine for AEM platform</description>
@@ -213,11 +213,6 @@
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>com.cognifide.maven.plugins</groupId>
-					<artifactId>vltco-maven-plugin</artifactId>
-					<version>0.1.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
