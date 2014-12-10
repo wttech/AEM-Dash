@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+template {
+	display: none !important;
+}
+
+.popover {
+	max-width: 450px !important;
+}
+
+#dash-menu {
+	margin-bottom: 0;
+	border-radius: 0 !important;
+}
+
+#dash-menu .container-fluid {
+	padding-left: 0;
+}
+
+#dash-menu .navbar-collapse {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#dash-menu .navbar-form {
+	margin-bottom: 0;
+	margin-left: -8px;
+}
+
+#dash-finder-location.has-error input {
+	color: #a94442 !important;
+}
+
+.select2-results {
+	max-height: 400px !important;
+}
+
+.select2-drop {
+	width: 888px !important;
+}
+
+#dash-frame {
+	display: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Defines which repository items are generally included
+-->
+<workspaceFilter version="1.0">
+    <filter root="/var/classes/org/apache/jsp/apps/dash" />
+    <filter root="/apps/dash">
+        <include pattern="/apps/dash/core(/.*)?"/>
+    </filter>
+    <filter root="/apps/dash/install">
+        <include pattern="/apps/dash/install/${project.build.finalName}.jar"/>
+    </filter>
+    <filter root="/etc/designs/dash"/>
+    <filter root="/etc/dash"/>
+   	    <filter root="/apps/dash/config">
+        <include pattern="/apps/dash/config(/.*)?" />
+    </filter>
+</workspaceFilter>

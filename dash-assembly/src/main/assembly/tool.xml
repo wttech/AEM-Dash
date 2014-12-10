@@ -1,0 +1,75 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+	<id>tool</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<moduleSets>
+		<!-- this set packages all modules except foundation -->
+		<moduleSet>
+			<!-- Enable access to all projects in the current multimodule build! -->
+			<useAllReactorProjects>true</useAllReactorProjects>
+
+			<!-- All, but self -->
+			<excludes>
+				<exclude>com.cognifide.aem:dash-assembly</exclude>
+			</excludes>
+
+			<!-- items from source folder -->
+			<sources>
+				<includeModuleDirectory>false</includeModuleDirectory>
+
+				<fileSets>
+					<fileSet>
+						<directory>src/main/aem/jcr_root</directory>
+						<outputDirectory>/jcr_root</outputDirectory>										
+						<excludes>
+							<exclude>**/.vlt</exclude>							
+							<exclude>/WEB-INF/**</exclude>
+						</excludes>		
+						<includes>
+							<include>/libs/cq/core/content/tools/**</include>
+							<include>/apps/**</include>
+							<include>/etc/**</include>
+						</includes>								
+					</fileSet>
+				</fileSets>
+			</sources>
+
+			<!-- compiled java classes - jars -->
+			<binaries>
+				<outputDirectory>/jcr_root/apps/dash/install</outputDirectory>
+				<outputFileNameMapping>${module.artifactId}-${module.version}.${module.extension}</outputFileNameMapping>
+				<unpack>false</unpack>
+				<dependencySets>
+					<dependencySet>
+						<unpack>false</unpack>
+						<scope>runtime</scope>
+						<outputDirectory>/jcr_root/apps/dash/install</outputDirectory>
+						<includes>
+							<include>com.cognifide.aem.*</include>
+						</includes>
+					</dependencySet>
+				</dependencySets>
+			</binaries>
+		</moduleSet>
+	</moduleSets>
+
+	<!-- VLT META-INF -->
+	<fileSets>
+		<fileSet>
+			<directory>src/main/vault/common</directory>
+			<filtered>false</filtered>
+			<outputDirectory>/META-INF/vault</outputDirectory>
+		</fileSet>
+	<fileSet>
+			<directory>src/main/vault/profile/full</directory>
+			<filtered>true</filtered>
+			<outputDirectory>/META-INF/vault</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>

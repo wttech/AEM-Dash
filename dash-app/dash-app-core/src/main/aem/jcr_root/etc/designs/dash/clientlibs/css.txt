@@ -1,0 +1,11 @@
+#base=css
+bootstrap.min.css
+magnific-popup.css
+select2.css
+select2-bootstrap3.css
+jquery.smartmenus.bootstrap.css
+dash-dashboard.css
+dash-playground.css
+dash-delacroix.css
+dash-board.css
+dash-bookmarklet.css

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>dash-app</artifactId>
+	<parent>
+		<groupId>com.cognifide.aem</groupId>
+		<artifactId>dash</artifactId>
+		<version>1.2.0-SNAPSHOT</version>
+	</parent>
+	<name>AEM Dash - Application</name>
+	<packaging>pom</packaging>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- CQ / AEM Platform -->
+
+			<dependency>
+				<groupId>com.adobe.granite</groupId>
+				<artifactId>com.adobe.granite.ui.commons</artifactId>
+				<version>5.5.14</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cqse</groupId>
+				<artifactId>cqse-httpservice</artifactId>
+				<version>4.1.24</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq</groupId>
+				<artifactId>cq-commons</artifactId>
+				<version>5.5.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.dam</groupId>
+				<artifactId>cq-dam-api</artifactId>
+				<version>5.5.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.dam</groupId>
+				<artifactId>cq-dam-commons</artifactId>
+				<version>5.5.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.dam</groupId>
+				<artifactId>cq-dam-core</artifactId>
+				<version>5.5.6</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-api</artifactId>
+				<version>5.5.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-commons</artifactId>
+				<version>5.5.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-core</artifactId>
+				<version>5.5.6</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-foundation</artifactId>
+				<version>5.5.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-taglib</artifactId>
+				<version>5.5.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.day.cq.wcm</groupId>
+				<artifactId>cq-wcm-undo</artifactId>
+				<version>5.5.4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>1.4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.scr</artifactId>
+				<version>1.6.1-R1236132</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>org.apache.sling.api</artifactId>
+				<version>2.2.4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>org.apache.sling.servlets.resolver</artifactId>
+				<version>2.1.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>org.apache.sling.scripting.jsp</artifactId>
+				<version>2.0.20</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
+				<version>2.1.6</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.jcr</groupId>
+				<artifactId>jcr</artifactId>
+				<version>2.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.6.4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.jackrabbit</groupId>
+				<artifactId>jackrabbit-jcr-commons</artifactId>
+				<version>2.4.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- Other dependencies -->
+
+			<dependency>
+				<!-- scr annotations - for generating component descriptors only, not a platform dependency -->
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.scr.annotations</artifactId>
+				<version>1.9.0</version>
+				<!-- this dependency is not required at runtime - compile scope would embed it in the package -->
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- New sling event version - required for CQ hot fixes -->
+			<dependency>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>org.apache.sling.event</artifactId>
+				<version>3.3.4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- sling topology event -->
+			<dependency>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>org.apache.sling.discovery.api</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+
+			<!-- org.osgi -->
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.core</artifactId>
+				<version>4.2.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.compendium</artifactId>
+				<version>4.2.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- custom -->
+			<dependency>
+				<groupId>org.ocpsoft.prettytime</groupId>
+				<artifactId>prettytime</artifactId>
+				<version>3.2.5.Final</version>
+			</dependency>
+
+			<!-- Guava -->
+			<dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.3</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>15.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!--
+		# Dependencies
+		-->
+
+	<dependencies>
+
+		<!-- com.adobe.granite -->
+		<dependency>
+			<!-- required for JSP to compile: CQ taglib -->
+			<groupId>com.adobe.granite</groupId>
+			<artifactId>com.adobe.granite.ui.commons</artifactId>
+		</dependency>
+
+		<!-- com.day -->
+		<dependency>
+			<!-- required for JSP to compile -->
+			<!-- replaces javax.servlet:servlet-api:2.4 -->
+			<groupId>com.day.cqse</groupId>
+			<artifactId>cqse-httpservice</artifactId>
+		</dependency>
+
+		<!-- com.day.aem -->
+		<dependency>
+			<groupId>com.day.cq</groupId>
+			<artifactId>cq-commons</artifactId>
+		</dependency>
+
+		<!-- com.day.aem.dam -->
+		<dependency>
+			<groupId>com.day.cq.dam</groupId>
+			<artifactId>cq-dam-api</artifactId>
+		</dependency>
+
+		<!-- com.day.aem.wcm -->
+		<dependency>
+			<groupId>com.day.cq.wcm</groupId>
+			<artifactId>cq-wcm-api</artifactId>
+		</dependency>
+		<dependency>
+			<!-- required for JSP to compile: global.jsp -->
+			<groupId>com.day.cq.wcm</groupId>
+			<artifactId>cq-wcm-commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq.wcm</groupId>
+			<artifactId>cq-wcm-foundation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.day.cq.wcm</groupId>
+			<artifactId>cq-wcm-taglib</artifactId>
+		</dependency>
+		<dependency>
+			<!-- required for JSP to compile: init.jsp -->
+			<groupId>com.day.cq.wcm</groupId>
+			<artifactId>cq-wcm-undo</artifactId>
+		</dependency>
+
+		<!-- apache commons -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+
+		<!-- org.apache.felix -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr</artifactId>
+		</dependency>
+		<dependency>
+			<!-- scr annotations - for generating component descriptors only, not a platform dependency -->
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr.annotations</artifactId>
+		</dependency>
+
+		<!-- org.apache.sling -->
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.servlets.resolver</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.api</artifactId>
+		</dependency>
+		<dependency>
+			<!-- replaces javax.servlet:jsp-api:2.0 -->
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.scripting.jsp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
+		</dependency>
+
+		<!-- javax -->
+		<dependency>
+			<groupId>javax.jcr</groupId>
+			<artifactId>jcr</artifactId>
+		</dependency>
+
+		<!-- org.osgi -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+		</dependency>
+
+		<!-- org.slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- custom -->
+		<dependency>
+			<groupId>org.ocpsoft.prettytime</groupId>
+			<artifactId>prettytime</artifactId>
+		</dependency>
+
+		<!-- test -->
+		<dependency>
+			<!-- When running tests one needs a SLF4J implementation -->
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<!-- Same version as API in CQ imports -->
+			<version>1.6.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.commons.testing</artifactId>
+			<version>2.0.14</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit4</artifactId>
+			<version>2.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-legacy</artifactId>
+			<version>2.6.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<artifactId>xmlunit</artifactId>
+			<groupId>xmlunit</groupId>
+			<version>1.4</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Import-Package>
+							!groovy.lang.*,
+							!javax.persistence.*,
+							!org.springframework.*,
+							*
+						</Import-Package>
+						<Export-Package>com.cognifide.aem.dash.core*;version="${project.version}"</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- scr annotations - e.g. for generating OSGi component descriptors -->
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-scr-plugin</artifactId>
+				<version>1.9.0</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.cognifide.maven.plugins</groupId>
+				<artifactId>maven-crx-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<includes>
+						<include>**/*Spec*</include>
+					</includes>
+					<excludes>
+						<exclude>**/*IntegrationSpec*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>dash-app-core</module>
+	</modules>
+</project>

@@ -1,0 +1,17 @@
+#dash-board {
+	margin-top: 20px;
+}
+
+#dash-board .table-credentials {
+	margin-bottom: 10px;
+}
+
+#dash-board .table-entries {
+}
+
+.panel-blank {
+	border: 0 !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
