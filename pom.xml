@@ -11,9 +11,9 @@
 	<url>http://www.cognifide.com</url>
 
 	<scm>
-		<connection>scm:git:https://github.com/Cognifide/AEM-Dash.git</connection>
-		<url>scm:git:https://github.com/Cognifide/AEM-Dash.git</url>
-		<developerConnection>scm:git|https://github.com/Cognifide/AEM-Dash.git</developerConnection>
+		<connection>scm:git:https://github.com/wttech/AEM-Dash.git</connection>
+		<url>scm:git:https://github.com/wttech/AEM-Dash.git</url>
+		<developerConnection>scm:git|https://github.com/wttech/AEM-Dash.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -33,7 +33,7 @@
 
 	<inceptionYear>2014</inceptionYear>
 	<organization>
-		<name>Cognifide Ltd.</name>
+		<name>Wunderman Thompson Technology</name>
 		<url>http://www.cognifide.com</url>
 	</organization>
 	<licenses>
@@ -49,7 +49,7 @@
 			<id>krystian.panek</id>
 			<name>Krystian Panek</name>
 			<email>krystian.panek@cognifide.com</email>
-			<organization>Cognifide Ltd.</organization>
+			<organization>Wunderman Thompson Technology</organization>
 		</developer>
 	</developers>
 

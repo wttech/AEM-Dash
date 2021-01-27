@@ -186,7 +186,7 @@
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright Cognifide Limited, 67 Clerkenwell Road, London EC1R 5BL
+   Copyright Wunderman Thompson Technology
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
